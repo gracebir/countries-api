@@ -5,6 +5,7 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     padding: 1.5em 3em;
+    background-color: var(--color-dark-blue);
     box-shadow: 0px 1px 5px 0px var( --color-very-dark-blue-light);
 `
 const H3 = styled.h3`
@@ -19,7 +20,7 @@ const ModeButton = styled.button`
     border: none;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
-    background-color: var(--color-very-dark-blue-dark);
+    background-color: transparent;
     color: var(--color-white-dark-mode);
     font-size: 14px;
     cursor: pointer;

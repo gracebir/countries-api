@@ -1,21 +1,16 @@
-// import React from 'react';
-// import axios from 'axios';
-
+import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-
+import { Routes, Route} from 'react-router-dom'
+import DetailCountry from "./components/Detail";
 function App() {
-    // const [countries, setCountries] = React.useState([]);
-    
-    // React.useEffect(() => {
-    //     axios.get('https://restcountries.com/v3.1/all')
-    //         .then(res => {
-    //             setCountries(res.data);
-    //     })
-    // }, [])
-    
+
     return (
         <div>
-           <NavBar/> 
+            <NavBar /> 
+            <Routes>
+                <Route index element={<Home/>}/>
+                <Route path="detail/:name" element={<DetailCountry/>}/>
+            </Routes>
         </div>
     );
 }

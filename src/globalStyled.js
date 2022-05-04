@@ -20,5 +20,6 @@ export const CreateGlobalStyled = createGlobalStyle`
         font-family: 'Nunito Sans', sans-serif;
         background-color: var(--color-very-dark-blue-dark);
         color: var(--color-white-dark-mode);
+        overflow-x: hidden;
     }
 `
