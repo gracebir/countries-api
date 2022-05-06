@@ -54,9 +54,11 @@ const ParaSection = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    line-height: 1.7;
     @media (min-width: 45em) {
         display: flex;
         gap: 3rem;
+        line-height: 2;
     }
 `
 
