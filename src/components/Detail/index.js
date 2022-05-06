@@ -5,16 +5,20 @@ import { BiArrowBack} from 'react-icons/bi'
 import axios from 'axios'
 
 const DetailContainer = styled.div`
-    padding: 4em 3em;
+    padding: 4em 2em;
+    @media (min-width: 45em) {
+        padding: 4em 3em;
+    }
 `
 
 const Country = styled.div`
-        @media (min-width: 45em) {
-            display: flex;
-            flex-direction: row;
-            gap: 5rem;
-            padding: 4rem 0;
-        }
+    padding: 4rem 0;
+    @media (min-width: 45em) {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+        padding: 4rem 0;
+    }
 `
 
 const CountryImg = styled.img`
@@ -23,14 +27,23 @@ const CountryImg = styled.img`
 `
 
 const ImgSection = styled.div`
-    min-width: 30rem;
+    @media (min-width: 45em) {
+        min-width: 30rem;
+    }
 `
 
 const InfoSection = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    padding: 2rem;
+    gap: 1.5em;
+    padding: 2rem 0;
+    @media (min-width: 45em) {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        padding: 2rem;
+    }
+    
 `
 
 const CountryName = styled.h3`
@@ -39,7 +52,12 @@ const CountryName = styled.h3`
 
 const ParaSection = styled.div`
     display: flex;
+    flex-direction: column;
     gap: 3rem;
+    @media (min-width: 45em) {
+        display: flex;
+        gap: 3rem;
+    }
 `
 
 
@@ -50,9 +68,14 @@ const Span = styled.span`
 `
 
 const BorderCountries = styled.div`
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     gap: .5em;
+    @media (min-width: 45em) {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: .5em;
+    }
 `
 
 const BorderCountry = styled.div`
@@ -64,7 +87,13 @@ const BorderCountry = styled.div`
 
 const Footerdetail = styled.div`
     display: flex;
-    gap: .5em;
+    flex-direction: column;
+    gap: 1em;
+    @media (min-width: 45em) {
+        display: flex;
+        gap: .5em;
+    }
+   
 `
 
 const ButtonBack = styled(Link)`
@@ -110,16 +139,16 @@ const DetailCountry = () => {
                  <CountryName>{data.name.common}</CountryName>
                  <ParaSection>
                      <div>
-                         <p><Span>Native Name</Span>: {}</p>
-                         <p><Span>Population</Span>: {data.population}</p>
+                         <p><Span>Native Name</Span>: {Object.values(data.name.nativeName).map(item => `${item.common}`)}</p>
+                         <p><Span>Population</Span>: {data.population.toLocaleString("en-Us")}</p>
                          <p><Span>Region</Span>: {data.region}</p>
                          <p><Span>Sub Region</Span>: {data.subregion}</p>
                          <p><Span>Capital</Span>: {data.capital}</p>
                      </div>
                      <div>
                         <p><Span>Top level Domain</Span>: {data.tld}</p>
-                        <p><Span>Currencies</Span>: {}</p>
-                        <p><Span>Languages</Span> : {}</p>
+                        <p><Span>Currencies</Span>: {Object.values(data.currencies).map(item => `${item.name}`)}</p>
+                        <p><Span>Languages</Span> : {Object.values(data.languages).map(item => `${item} `)}</p>
                      </div>
                  </ParaSection>
                  <Footerdetail>

@@ -8,8 +8,16 @@ const DropDownWrapper = styled.div`
 `
 
 const DropBottom = styled.div`
-    width: 60%;
-    @media screen {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-dark-blue);
+    box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
+    gap: 1em;
+    border-radius: 5px;
+    padding: 1em 1em;
+    cursor: pointer;
+    @media (min-width: 45em) {
         display: flex;
         align-items: center;
         background-color: var(--color-dark-blue);

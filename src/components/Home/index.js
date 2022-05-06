@@ -103,12 +103,7 @@ const Home = () => {
     React.useEffect(() => {
         axios.get('https://restcountries.com/v3.1/all')
             .then(res => {
-                if(!res.data){
-                    return <div style={{padding:'2em 3rem'}}> <h3>Loading....</h3></div>
-                } else {
-                    setCountries(res.data);
-                }
-                
+                setCountries(res.data);    
         })
     }, [])
 
@@ -135,7 +130,7 @@ const Home = () => {
                   {countries?.map((country, i) => (
                       <Card
                           img={country.flags.png}
-                          population={country.population}
+                          population={country.population.toLocaleString("en-Us")}
                           region={country.region}
                           name={country.name.common}
                           capital={country.capital}
