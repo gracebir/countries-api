@@ -33,11 +33,11 @@ const SearchSection = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-   @media (min-width: 45em) {
-    display: flex;
-    justify-content: space-between;
-   }
-
+    @media (min-width: 45em) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 `
 
 const SearchInput = styled.input`
@@ -55,6 +55,7 @@ const SearchInput = styled.input`
         border: none;
         color: var(--color-white-dark-mode);
         padding: .3em 1em;
+        width: 30rem;
         box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
         border-radius: 5px;
         font-family: 'Nunito Sans', sans-serif;

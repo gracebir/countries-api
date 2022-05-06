@@ -19,6 +19,7 @@ const DropBottom = styled.div`
     cursor: pointer;
     @media (min-width: 45em) {
         display: flex;
+        width: 100%;
         align-items: center;
         background-color: var(--color-dark-blue);
         box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
