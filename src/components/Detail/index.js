@@ -90,9 +90,11 @@ const DetailCountry = () => {
 
     React.useEffect(()=>{
         // eslint-disable-next-line
-        axios.get(`https://restcountries.com/v2/name/${params.name}`)
+        axios.get(`https://restcountries.com/v3.1/name/${params.name}`)
         .then((res)=> setCountry(res.data))
     }, [params.name])
+
+    console.log(country);
     
   return (
     <DetailContainer>
@@ -105,19 +107,19 @@ const DetailCountry = () => {
                  <CountryImg src={data.flags.png} alt=''/>
              </ImgSection>
              <InfoSection>
-                 <CountryName>{data.name}</CountryName>
+                 <CountryName>{data.name.common}</CountryName>
                  <ParaSection>
                      <div>
-                         <p><Span>Native Name</Span>: {data.nativeName}</p>
+                         <p><Span>Native Name</Span>: {}</p>
                          <p><Span>Population</Span>: {data.population}</p>
                          <p><Span>Region</Span>: {data.region}</p>
                          <p><Span>Sub Region</Span>: {data.subregion}</p>
                          <p><Span>Capital</Span>: {data.capital}</p>
                      </div>
                      <div>
-                        <p><Span>Top level Domain</Span>: {data.topLevelDomain}</p>
-                        <p><Span>Currencies</Span>: {data.currencies.map((c)=> c.code)}</p>
-                        <p><Span>Languages</Span> : {data.languages.map(c => c.name)}</p>
+                        <p><Span>Top level Domain</Span>: {data.tld}</p>
+                        <p><Span>Currencies</Span>: {}</p>
+                        <p><Span>Languages</Span> : {}</p>
                      </div>
                  </ParaSection>
                  <Footerdetail>

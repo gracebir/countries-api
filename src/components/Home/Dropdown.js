@@ -8,14 +8,18 @@ const DropDownWrapper = styled.div`
 `
 
 const DropBottom = styled.div`
-    display: flex;
-    align-items: center;
-    background-color: var(--color-dark-blue);
-    box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
-    gap: 1em;
-    border-radius: 5px;
-    padding: .5em 1em;
-    cursor: pointer;
+    width: 60%;
+    @media screen {
+        display: flex;
+        align-items: center;
+        background-color: var(--color-dark-blue);
+        box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
+        gap: 1em;
+        border-radius: 5px;
+        padding: .5em 1em;
+        cursor: pointer;
+    }
+    
 `
 
 const DropdownLabel = styled.span`
@@ -26,16 +30,14 @@ const DropdownLabel = styled.span`
 
 const DropdowContent = styled.div`
     position: absolute;
-    background-color: var(--almost-white);
-    @media (min-width: 45em) {
-        width: 10rem;
-        border-radius: 5px;
-        margin-top: .4em;
-        background-color: var(--color-dark-blue);
-        box-shadow: -1px 0px 5px 0px var( --color-very-dark-blue-light);
-        z-index: 1;
-        padding: 0 1.4em;
-    }
+    width: 10rem;
+    border-radius: 5px;
+    margin-top: .4em;
+    background-color: var(--color-dark-blue);
+    box-shadow: -1px 0px 5px 0px var( --color-very-dark-blue-light);
+    z-index: 1;
+    padding: 0 1.4em;
+   
 `
 const DropItemGroup = styled.div`
     display: flex;
@@ -67,7 +69,7 @@ const Dropdown = ({ items }) => {
         <DropBottom onClick={onClick}>
             <DropdownLabel>{dLabel ? dLabel : 'Filter by Region'}</DropdownLabel>
            <RiArrowDownSLine/>
-          </DropBottom>
+        </DropBottom>
           {isOpen ? (
             <DropdowContent>
                 {items?.map((item, i)=>(
