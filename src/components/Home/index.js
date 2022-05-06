@@ -23,7 +23,7 @@ const continentItem = [
 ]
 
 const Container = styled.div`
-    padding: 1em 2rem;
+    padding: 1.5em 1em;
     @media (min-width: 45em) {
         padding: 2em 3rem;
     }
@@ -67,7 +67,7 @@ const SearchInput = styled.input`
 
 const CountrieSection = styled.div`
     display: grid;
-    padding: 2rem 1rem;
+    padding: 2rem 2em;
     grid-template-columns: 1fr;
     gap: 3rem;
     @media (min-width: 35em) {
