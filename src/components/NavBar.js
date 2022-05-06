@@ -20,6 +20,7 @@ const H3 = styled.h3`
     font-size: 14px;
     @media (min-width: 45em) {
       font-weight: 800;
+      font-size: 18px;
     }
 `
 
@@ -35,6 +36,19 @@ const ModeButton = styled.button`
     color: var(--color-white-dark-mode);
     font-size: 13px;
     cursor: pointer;
+    @media (min-width: 45em) {
+      display: flex;
+      align-items: center;
+      gap: .5em;
+      background-color: none;
+      border: none;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      background-color: transparent;
+      color: var(--color-white-dark-mode);
+      font-size: 14px;
+      cursor: pointer;
+    }
 `
 
 const NavBar = () => {
