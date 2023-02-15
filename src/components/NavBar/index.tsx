@@ -10,8 +10,8 @@ function NavBar({ theme, setTheme }: navbarProp) {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <header className="bg-bgLight shadow-3xl dark:shadow-2xl dark:bg-bgDarlElt flex justify-between items-center md:px-24 py-6">
-      <h2 className="font-[700] text-xl md:text-2xl text-textLight dark:text-textDark">
+    <header className="bg-bgLight shadow-3xl dark:shadow-2xl dark:bg-bgDarlElt flex justify-between items-center px-4 md:px-24 py-6">
+      <h2 className="font-[700] text-[1rem] md:text-2xl text-textLight dark:text-textDark">
         Where in the world?
       </h2>
       <div onClick={handleMode} className="cursor-pointer">
