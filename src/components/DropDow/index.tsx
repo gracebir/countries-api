@@ -24,16 +24,16 @@ function DropDown({text, setText}: dropDownProps) {
 
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="relative inline-block">
       <div
         onClick={openDropdow}
-        className="flex justify-between items-center cursor-pointer rounded-md shadow-xl px-6 py-4 bg-bgLight dark:bg-bgDarlElt w-[15rem]"
+        className="flex justify-between items-center cursor-pointer rounded-md shadow-xl px-6 py-5 bg-bgLight dark:bg-bgDarlElt w-[15rem]"
       >
-        <p>{text}</p>
+        <p className="text-[1rem]">{text}</p>
         <BiChevronDown size={"1.4rem"} />
       </div>
       {isOpen && (
-        <div className="flex flex-col gap-3 transition-all ease-in-out duration-75 rounded-md shadow-xl px-6 py-4 bg-bgLight dark:bg-bgDarlElt w-[15rem]">
+        <div className="absolute mt-[0.4em] flex flex-col gap-3 transition-all ease-in-out duration-75 rounded-md shadow-xl px-6 py-4 bg-bgLight dark:bg-bgDarlElt w-[15rem]">
           {
             continents.map((item, i)=> (
                 <span key={i} onClick={()=>handleDropdow(i)} className="cursor-pointer">{item}</span>
