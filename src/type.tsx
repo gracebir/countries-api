@@ -3,6 +3,6 @@ export type cardProps = {
     name: string,
     imgUrl: string
     capital: string
-    population: number,
+    population: string,
     continent: string
 }

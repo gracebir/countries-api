@@ -1,23 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Card from '../components/Card/Card';
 import DropDown from '../components/DropDow';
 import TextInput from '../components/TextInput';
-import { countryResponse, getAllContries } from '../queries/queries';
+import numeral from 'numeral'
+import { countryResponse, getAllContries, getCountriesSubregion } from '../queries/queries';
 
 function Countries() {
     const [text, setText] = useState("Filter by Region");
     const [countries, setCounries] = useState<Array<countryResponse>>([]);
+    const [search, setSearch] = useState("")
+    console.log(">>>>>>+++",search)
     useEffect(()=>{
       const getcountries = async() => {
         setCounries(await getAllContries())
       }
       getcountries()
     },[])
+
+    useEffect(()=> {
+      const filterCountries = async()=> {
+        setCounries(await getCountriesSubregion(text))
+      }
+      filterCountries()
+    }, [text])
+
+    useEffect(()=> {
+      const filterCountries = async()=> {
+        setCounries(await getCountriesSubregion(text))
+      }
+      filterCountries()
+    }, [text])
   return (
     <div className='flex flex-col gap-10'>
         {/* search section */}
       <div className='flex flex-col gap-12 md:justify-between md:flex-row md:items-center'>
-        <TextInput/>
+        <TextInput search={search} setSearch={setSearch}/>
         <DropDown text={text} setText={setText}/>
       </div>
       {/* countries section */}
@@ -26,7 +43,7 @@ function Countries() {
           <Card 
           key={i}
           name={country.name.common}
-          population={country.population}
+          population={numeral(country.population).format('0,000')}
           continent={country.region} 
           capital={country.capital}
           imgUrl={country.flags.png}/>

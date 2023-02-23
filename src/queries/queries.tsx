@@ -52,3 +52,15 @@ export const getCountryDetail = async(name: string) => {
     const data : Array<detailResponse> = await response.data;
     return data
 }
+
+export const getCountriesSubregion = async(name: string) => {
+    const response = await axios(`https://restcountries.com/v3.1/subregion/${name}`)
+    const data: Array<countryResponse> = await response.data
+    return data
+}
+
+export const searchCountriesSubregion = async(name: string) => {
+    const response = await axios(`https://restcountries.com/v3.1/name/${name}`)
+    const data: Array<countryResponse> = await response.data
+    return data
+}
