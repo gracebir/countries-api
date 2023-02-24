@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Card({name, population, capital, continent,imgUrl}:cardProps) {
   return (
-    <Link to={`/country/${name}`} className='bg-bgLight dark:bg-bgDarlElt h-[23rem] w-[18rem] shadow-xl lg:w-[19rem] rounded-md md:w-[20rem] md:h-[24rem]'>
+    <Link to={`/country/${name}`} className='bg-bgLight dark:bg-bgDarlElt h-[23rem] w-[18rem] shadow-xl lg:w-[19rem] rounded-md sm:w-[19.5rem] md:w-[19rem] md:h-[24rem]'>
       {/* card header */}
       <div className='h-[50%] rounded-t-md'>
         <img className='w-[100%] h-[100%] object-fit rounded-t-md' src={imgUrl} alt="" />
