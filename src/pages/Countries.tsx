@@ -3,13 +3,30 @@ import Card from '../components/Card/Card';
 import DropDown from '../components/DropDow';
 import TextInput from '../components/TextInput';
 import numeral from 'numeral'
-import { countryResponse, getAllContries, getCountriesSubregion } from '../queries/queries';
+import { countryResponse, getAllContries, getCountriesSubregion, searchCountriesName } from '../queries/queries';
+
+function useSearchDebounce(value:string, time=250){
+  const [debounceValue, setDebounce] = useState(value)
+  useEffect(()=>{
+      const timeout = setTimeout(()=>{
+          setDebounce(value)
+      }, time)
+      return () => {
+          clearTimeout(timeout)
+      }
+  },[value, time])
+
+  return debounceValue
+}
+
 
 function Countries() {
     const [text, setText] = useState("Filter by Region");
     const [countries, setCounries] = useState<Array<countryResponse>>([]);
     const [search, setSearch] = useState("")
-    console.log(">>>>>>+++",search)
+
+    const searchD = useSearchDebounce(search)
+
     useEffect(()=>{
       const getcountries = async() => {
         setCounries(await getAllContries())
@@ -25,11 +42,12 @@ function Countries() {
     }, [text])
 
     useEffect(()=> {
-      const filterCountries = async()=> {
-        setCounries(await getCountriesSubregion(text))
+      const searchCountries = async()=> {
+        setCounries(await searchCountriesName(searchD))
       }
-      filterCountries()
-    }, [text])
+      searchCountries()
+    }, [searchD])
+    
   return (
     <div className='flex flex-col gap-10'>
         {/* search section */}
