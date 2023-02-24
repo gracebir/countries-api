@@ -6,7 +6,6 @@ type textInputType = {
 }
 
 function TextInput({search, setSearch}: textInputType) {
-  console.log(">>>",search)
   return (
     <form className='w-full flex gap-3 items-center rounded-md shadow-xl px-6 py-4 bg-bgLight dark:bg-bgDarlElt md:w-[25vw]'>
         <BiSearchAlt2 size={"1.6rem"}/>
