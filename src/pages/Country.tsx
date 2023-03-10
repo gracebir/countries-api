@@ -16,7 +16,7 @@ function Country() {
     if (!country?.length) return <div className='text-2xl font-semibold h-screen'>loading....</div>
 
     return (
-        <div className='flex flex-col gap-16 md:flex-col px-4 md:px-0 md:h-[72.6vh] lg:h-[73.3vh]'>
+        <div className='flex flex-col gap-16 md:flex-col px-4 md:px-0 md:h-screen lg:max-h-[79vh]'>
             <Link className='shadow-xl px-8 py-2 flex flex-row items-center gap-2 rounded-md bg-bgLight dark:bg-bgDarlElt w-fit' to='/'>
                 <HiOutlineArrowNarrowLeft />
                 <span>Back</span>

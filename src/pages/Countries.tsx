@@ -49,7 +49,7 @@ function Countries() {
     }, [searchD])
     
   return (
-    <div className='flex flex-col gap-10'>
+    <div className='flex flex-col gap-10 lg:min-h-screen'>
         {/* search section */}
       <div className='flex flex-col gap-12 md:justify-between md:flex-row md:items-center'>
         <TextInput search={search} setSearch={setSearch}/>
