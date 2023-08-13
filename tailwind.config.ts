@@ -8,10 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      boxShadow: {
+        '3xl': '0px 1px 5px 0px hsl(0, 0%, 52%)',
+        '2xl': '0px 1px 5px 0px hsl(207, 26%, 17%)',
+        'xl': '-1px 0px 5px 0px rgba(0,0,0,0.75)'
+      },
+      colors:{
+        textLight: 'var(--color-text-light)',
+        textDark: 'var(--color-text-dark)',
+        textInputdark: 'var(--color-text-dark)'
+      },
+      backgroundColor:{
+        bgLight: 'var(--color-bg-light)',
+        bgDark: 'var(--color-bg-dark)',
+        bgDarlElt: 'var(--color-element-dark)'
       },
     },
   },
