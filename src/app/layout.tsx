@@ -18,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true} className={nunito.className}>
         {/* header */}
+        <div className='container mx-auto'>
         {children}
+        </div>
       </body>
     </html>
   )
