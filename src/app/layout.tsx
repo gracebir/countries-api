@@ -1,3 +1,4 @@
+import Header from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Nunito_Sans } from 'next/font/google'
@@ -16,8 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={nunito.className}>
+      <body suppressHydrationWarning={true} className={`${nunito.className} bg-bgLight dark:bg-bgDark text-textLight dark:text-textDark`}>
         {/* header */}
+        <Header/>
         <div className='container mx-auto'>
         {children}
         </div>
