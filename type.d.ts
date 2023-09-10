@@ -46,3 +46,14 @@ export type cardProps = {
     population: string,
     continent: string
 }
+
+export type dropDownProps = {
+    text: string
+    setText: React.Dispatch<React.SetStateAction<string>>
+}
+
+
+export type textInputType = {
+    search: string
+    setSearch: React.Dispatch<React.SetStateAction<string>>
+}
